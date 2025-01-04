@@ -50,7 +50,7 @@ function valuecheck() {
 
 async function addUser(name, pass) {
     try {
-        const response = await fetch('http://localhost:3001/add-user', {
+        const response = await fetch('https://hangman-fuil.onrender.com/add-user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
