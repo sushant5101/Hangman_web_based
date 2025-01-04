@@ -1,0 +1,119 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: linear-gradient(to right, #4c0769, #3b016e, #9c1d01, #c23c03);
+}
+
+#main {
+    border: 2px solid #787388;
+    border-radius: 99px 4px;
+    height: 500px;
+    width: 500px;
+    gap: 50px;
+    margin: 9% 20% 2% 31.5%;
+    background: #171744;
+    box-shadow: 0px 0px 25px 6px #535C91;
+}
+
+#one {
+    margin: 10% 17%;
+    height: 15%;
+}
+
+.inputlabel {
+    color: rgb(155, 154, 154);
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#username {
+    width: 300px;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    padding-left: 4px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    box-shadow: 0px 0px 20px 2px #FF0080;
+}
+
+#two {
+    margin: 20% 17%;
+    height: 15%;
+}
+
+#three {
+    width: 300px;
+    display: flex;
+    background-color: white;
+    box-shadow: 0px 0px 20px 2px #FF0080;
+    border-radius: 3px;
+}
+
+#password {
+    background-color: transparent;
+    border-radius: 3px 0px 0px 3px;
+    width: 100%;
+    border: none;
+    height: 27px;
+    outline: none;
+    padding-left: 4px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+}
+
+#trigger {
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    outline: none;
+    border: 2px solid white;
+    width: 40px;
+    height: 31px;
+    border-radius: 0px 4px 4px 0px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#trigger:hover {
+    cursor: pointer;
+    font-size: 17px;
+    text-shadow: 0px 6px 4px black;
+}
+
+#enterbtn {
+    text-align: center;
+}
+
+#enter {
+    outline: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    height: 40px;
+    width: 70px;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 780;
+}
+
+#enter:hover {
+    cursor: pointer;
+    background-color: rgb(185, 184, 184);
+    border: 2px solid rgb(185, 184, 184);
+
+}
+
+#question {
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#question a {
+    color: rgb(73, 73, 243);
+}

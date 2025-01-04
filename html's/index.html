@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
+    <title>Hangman</title>
+</head>
+
+<body>
+    <nav id="nav">
+        <a href="entry.html"> <img id="logo" src="img/logo.ico" title="Hello" alt="img"></a>
+        <div id="details">
+            <ul>
+                <li>Profile</li>
+                <li>Details</li>
+                <li>Settings</li>
+            </ul>
+        </div>
+    </nav>
+    <div id="body1">
+        <h3 id="greet">Hello and wellcome to the game of hangman<br></h3>
+        <form id="level_chooser">
+
+            <label for="level_chooser" id="level_index">choose a level<br></label>
+
+            <div class="LEVEL">
+                <input type="radio" id="easy" name="level" value="easy">
+                <label for="easy">Easy<br></label>
+            </div>
+            <div class="LEVEL">
+
+                <input type="radio" id="medium" name="level" value="medium">
+                <label for="medium">Medium<br></label>
+
+            </div>
+            <div class="LEVEL">
+
+                <input type="radio" id="hard" name="level" value="hard">
+                <label for="hard">Hard<br></label>
+            </div>
+
+        </form><br>
+
+        <label for="used_guessed_letter" id="inputlabel">Enter your letter :</label>
+        <input type="text" id="user_guessed_letter" maxlength="1" autocomplete="off" disabled
+            title="Choose a level to begin the game">
+        <input id="submit" type="submit" value="Enter" disabled title="Choose a level to begin the game"><br>
+        <br>
+        <hr>
+        <div class="remaining-guess-container">
+            <h3 id="Remaining_guess_title">Remaining guess: </h3>
+            <p id="remaining_guess_count"></p>
+        </div>
+        <br>
+        <p id="word_length"></p>
+        <br>
+        <label id="used_letter_label" for="used_letter"></label>
+        <ul id="used_letter_list">
+        </ul>
+    </div>
+    <footer>
+        <div id="foot">
+            <p id="foothangman">HANG_MAN</p>
+            <br>
+            <div id="about">
+                <h4 class="title">About Us</h4>
+                <p class="details">Introduction <br> (Unavailable)</p>
+            </div>
+            <div id="socials">
+                <h4 class="title">Socials</h4>
+                <p class="details">Unavailable</p>
+            </div>
+            <div id="help">
+                <h4 class="title">Help</h4>
+                <p class="details">On progress</p>
+            </div>
+            <br>
+            <hr>
+            <p id="copyright">Copyright &#169; 2024</p>
+            <p id="version">Hangman version 1.0</p>
+        </div>
+        <hr>
+    </footer>
+
+    <script src="javascripts/script.js" defer></script>
+    <!-- <script src="data.js"></script> -->
+</body>
+
+</html>
