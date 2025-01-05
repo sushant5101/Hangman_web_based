@@ -3,10 +3,10 @@
     margin: 0;
 }
 
-/* @font-face {
+@font-face {
     font-family: 'CustomFont';
-    src: url('public/beba.ttf') format('truetype');
-} */
+    src: url('beba.ttf') format('truetype');
+}
 
 body {
     background-color: #242d47;
