@@ -13,6 +13,8 @@ package-lock.json
 firebase.json
 .firebaserc
 package.json
+.vscode/
+firebase.json
 
 # Firebase config
 
