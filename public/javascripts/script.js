@@ -29,7 +29,7 @@ const cRadiobutton = document.querySelectorAll('input[name=level]');
 let used_letters = [];
 
 //========================referencing html (DOC)================================
-
+const nav_div = document.getElementById("Details");
 const radio = document.getElementsByName("level");
 const submit = document.getElementById("submit");
 const user_input = document.getElementById("user_guessed_letter");
@@ -46,22 +46,30 @@ let dashes = []; // Initializing an empty string
 let is_correct = false;
 
 
+
 //============================accessing all the radio buttons======================
 
 cRadiobutton.forEach(radio => {
     radio.addEventListener('change', () => {
         used_letter_label.innerText = "Used_letters";
 
-        GAMAE_MANAGER(radio.value);
+        GAME_MANAGER(radio.value);
 
     });
 });
 
+//==============================================adding a block of code to play animation when mouse leaves======
+
+
+// function animationplay(element) {
+//     console.log(nav_div.offsetWidth); 
+//     element.style.animation = 'open 3s ease-in-out  reverse ';
+// }
 
 
 //=================== function to controll all the levels according to the user input============
 
-function GAMAE_MANAGER(level) {
+function GAME_MANAGER(level) {
 
 
     console.log("selected " + level + " level");
