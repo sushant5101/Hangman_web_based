@@ -1,23 +1,50 @@
+
+
+//================================================================
+
+let data = null;
+const profilep = document.getElementById("p");
+const details = document.getElementById("details");
+const settings = document.getElementById("settings");
+
+//====================fetching information from the server
+async function checkuser() {
+    try {
+        const response = await fetch('https://hangman-fuil.onrender.com/get-bin');
+        data = await response.json();
+    } catch (error) {
+        console.log("There was an error" + error);
+    }
+}
+
+(async () => {
+    await checkuser(); // Wait for the data
+    if (data) {
+        profilep.innerHTML = data.hangman_user[4].name;
+    }
+})();
+
 console.log("Hello! world");
 const cRadiobutton = document.querySelectorAll('input[name=level]');
 let used_letters = [];
 
 //========================referencing html (DOC)================================
 
-var radio = document.getElementsByName("level");
-var submit = document.getElementById("submit");
-var user_input = document.getElementById("user_guessed_letter");
-var listbody = document.getElementById("used_letter_list");
-var remaining_guesses = document.getElementById("remaining_guess_count");
-var used_letter_label = document.getElementById("used_letter_label");
-var word_length_label = document.getElementById("word_length");
-var rand_word_index = Math.floor(Math.random() * 10);
+const radio = document.getElementsByName("level");
+const submit = document.getElementById("submit");
+const user_input = document.getElementById("user_guessed_letter");
+const listbody = document.getElementById("used_letter_list");
+const remaining_guesses = document.getElementById("remaining_guess_count");
+const used_letter_label = document.getElementById("used_letter_label");
+const word_length_label = document.getElementById("word_length");
+const rand_word_index = Math.floor(Math.random() * 10);
 var incorrect = 0,
     correct_count = 0,
     word_length = 0,
     temp = 0;
 let dashes = []; // Initializing an empty string
 let is_correct = false;
+
 
 //============================accessing all the radio buttons======================
 
