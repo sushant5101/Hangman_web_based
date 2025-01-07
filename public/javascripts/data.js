@@ -12,7 +12,7 @@ const confirmpass = document.getElementById("confirmpassword");
 const confirmpassbox = document.getElementById("five");
 const userfeedback = document.getElementById("info");
 
-function visibility(input, action){
+function visibility(input, action) {
     if (input.type === "password") {
         input.type = "text";  // Show password
         action.innerText = "Θ";
@@ -24,25 +24,6 @@ function visibility(input, action){
     }
 }
 
-username.addEventListener("keypress", function (event) { // listening for enter key pressed
-    if (event.key === "Enter") {
-        event.preventDefault();
-        checkuser();
-    }
-});
-
-password.addEventListener("keypress", function (event) { // listening for enter key pressed
-    if (event.key === "Enter") {
-        event.preventDefault();
-        checkuser();
-    }
-});
-
-
-
-enter.addEventListener("click", () => { // listening for button pressed
-    checkuser();
-});
 
 async function getuser() {
     try {
@@ -63,15 +44,16 @@ async function checkuser() {
     const userData = await getuser(); // Access the data here
     if (userData.hangman_user) {
         userData.hangman_user.forEach(user => {
-            if (user.name === username.value) {
+            if (user.name === username.value && username.value !== "" && password.value !== "") {
                 userExists = true;
                 userfeedback.innerText = `${username.value} already exist pick other`
             }
         });
-        if (!userExists) {
+        if (!userExists && username.value !== "" && password.value !== "") {
             addUser(username.value, password.value);
         } else {
             console.log("failed");
+            alert("Process failed : the details you gave was incorrect or the user name has already been picked by someone");
         }
     }
 }

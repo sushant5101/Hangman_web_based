@@ -15,24 +15,27 @@
         <h3 id="headquestion">It looks like you are new want to register ?</h3>
         <div id="one">
             <label id="userlabel" class="inputlabel" for="username">Enter your username</label><br><br>
-            <input id="username" maxlength="20" placeholder="Eg. jhon" autocomplete="off" focus type="text" required="">
+            <input onkeypress="checkuser()" id="username" maxlength="20" placeholder="Eg. jhon" autocomplete="off" focus
+                type="text" required="">
             <p id="info"></p>
         </div>
         <div id="two">
             <label id="passwordlabel" class="inputlabel" for="username">Enter your password</label><br><br>
-            <div class="pass" id="three"><input class="password" id="password" maxlength="20" placeholder="Enter your password" autocomplete="off"
-                    type="password" required="">
+            <div class="pass" id="three"><input onkeypress="checkuser()" class="password" id="password" maxlength="20"
+                    placeholder="Enter your password" autocomplete="off" type="password" required="">
                 <button onclick="visibility(password, trigger)" id="trigger" name="trigger" class="trigger">O</button>
             </div>
             <div id="four">
                 <label for="confirmpass" id="confirmpass" class="inputlabel">Confirm your password</label>
                 <div class="pass" id="five">
-                    <input class="password" type="password" maxlength="20" placeholder="Re-Enter your password" name="confirmpass" id="confirmpassword" autocomplete="off">
-                    <button name="trigger" onclick="visibility(confirmpass, confirmtrigger)" id="confirmtrigger" class="trigger">O</button>
+                    <input onkeypress="checkuser()" class="password" type="password" maxlength="20"
+                        placeholder="Re-Enter your password" name="confirmpass" id="confirmpassword" autocomplete="off">
+                    <button name="trigger" onclick="visibility(confirmpass, confirmtrigger)" id="confirmtrigger"
+                        class="trigger">O</button>
                 </div>
             </div>
         </div>
-        <span id="enterbtn"><button id="enter">Enter</button></span>
+        <span id="enterbtn"><button onclick="checkuser()" id="enter">Enter</button></span>
         <p id="question">Don't have an account ? <a id="clickme">Click Me</a>.</p>
     </div>
 
