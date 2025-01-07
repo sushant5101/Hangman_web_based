@@ -42,23 +42,15 @@ body {
     padding: 9px;
 }
 
-@keyframes open {
-    0% {
-        width: 34%;
-    }
-
-    50% {
-        width: 45%;
-    }
-
-    100% {
-        width: 100%;
-    }
-}
 
 #Details:hover {
-    animation: open 3s ease-in-out .2s forwards;
-    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    width: 100%;
+    transition: .4s linear;
+}
+
+#Details:not(:hover) {
+    width: 34%;
+    transition: .5s linear;
 }
 
 #Details li {
@@ -163,7 +155,6 @@ body {
 }
 
 #word_length_box {
-    /* border: 2px solid red; */
     width: 65%;
     max-width: 65%;
 }
@@ -179,6 +170,7 @@ body {
 }
 
 #used_letter_list {
+    padding: 3px;
     margin: 5px 0px 0px 9px;
     display: flex;
     align-items: center;
@@ -210,10 +202,43 @@ body {
     white-space: pre;
 }
 
-#box pre {
+/* #box pre {
     font-size: 1.4rem;
     font-weight: bold;
-text-shadow:9px 19px 3px  #000000;
+    text-shadow: 9px 19px 3px #000000;
+} */
+
+#popupbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#popupclose {
+    position: fixed;
+    bottom: 88%;
+    left: 95%;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#popupwindow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 77%;
+    height: 77%;
+    border: 2px solid white;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
 
 #foot {

@@ -44,9 +44,10 @@ var incorrect = 0,
     temp = 0;
 let dashes = []; // Initializing an empty string
 let is_correct = false;
-
-
-
+const popupbox = document.getElementById("popupbox");
+const popupwindow = document.getElementById("popupwindow");
+const text = document.getElementById("text");
+const popupclose = document.getElementById("popupclose");
 //============================accessing all the radio buttons======================
 
 cRadiobutton.forEach(radio => {
@@ -68,6 +69,17 @@ cRadiobutton.forEach(radio => {
 
 
 //=================== function to controll all the levels according to the user input============
+
+popupclose.addEventListener("click", () => {
+    popupbox.style.display = "none";
+});
+
+window.addEventListener('click', function (event) {
+    if (event.target === popupbox) {
+        popupbox.style.display = 'none';
+    }
+});
+
 
 function GAME_MANAGER(level) {
 
@@ -155,6 +167,16 @@ function GAME_MANAGER(level) {
 
 function WORD_CHECKER(word_length, word) {
 
+
+    popupwindow.style.width = "35%";
+    popupwindow.style.height = "35%";
+    popupwindow.style.backgroundColor = "#020302";
+    popupwindow.style.color = "#ffffff";
+    popupwindow.style.fontFamily = "sans-serif";
+    text.style.textAlign = "center";
+    text.style.fontSize = "1.2rem";
+    popupwindow.style.alignContent = "center";
+
     incorrect = 0;//-------------------resetting the valuse of incorrect count --------------
 
 
@@ -164,7 +186,8 @@ function WORD_CHECKER(word_length, word) {
 
         if (used_letters.includes(user_input.value)) {
             console.log("allready entred " + user_input.value + " try another");
-            alert("You have allready entred the letter: " + user_input.value);
+            text.innerText = `You have already entred the letter " ${user_input.value} ".`;
+            popupbox.style.display = "block";
             break;
         }
         else if (user_input.value.toLowerCase() == word[i]) {
@@ -192,15 +215,18 @@ function WORD_CHECKER(word_length, word) {
         remaining_guesses.innerText = remaining_guesses.innerText - 1;
     }
     else if (correct_count == word_length) {
-        alert("You found all the letters, the letter was " + word);
-        location.reload();
+        user_input.focus = false;
+        text.innerText = `You found all the letter the word was ${word}.`;
+        popupbox.style.display = 'block';
+        user_input.focus = false;
     }
 
     //============================checking and updating the user their remaining guesses has been finished==========================================
 
     if (remaining_guesses.innerText == 0 || remaining_guesses.innerText < 0) {
-        alert("Your remaining guesses has been finished the word was " + word);
-        location.reload();
+        text.innerText = `Your remaining guesses has finished the word was : ${word}`;
+        popupbox.style.display = "block";
+        user_input.focus = false;
     }
 
     user_input.focus(); //focussing the user cursor to the input field

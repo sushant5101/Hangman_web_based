@@ -5,6 +5,7 @@
 
 body {
     background: linear-gradient(to right, #4c0769, #3b016e, #9c1d01, #c23c03);
+    overflow: hidden;
 }
 
 #main {
@@ -13,13 +14,23 @@ body {
     height: 500px;
     width: 500px;
     gap: 50px;
-    margin: 9% 20% 2% 31.5%;
+    margin: 5% 20% 2% 31.5%;
     background: #171744;
     box-shadow: 0px 0px 25px 6px #535C91;
+    overflow: hidden;
+}
+
+#headquestion {
+    text-align: center;
+    visibility: hidden;
+    color: rgb(179, 175, 175);
+    font-family: sans-serif;
+    font-weight: bolder;
+    margin-top: 9px;
 }
 
 #one {
-    margin: 10% 17%;
+    margin: 5% 17% 5% 17%;
     height: 15%;
 }
 
@@ -41,23 +52,36 @@ body {
     box-shadow: 0px 0px 20px 2px #FF0080;
 }
 
+#info{
+    color: rgb(214, 212, 212);
+    margin-top: 4px;
+    font-weight: lighter;
+}
+
 #two {
-    margin: 20% 17%;
+    margin: 10% 17% 10% 17%;
     height: 15%;
 }
 
-#three {
+.pass {
+    height: 30px;
     width: 300px;
     display: flex;
     background-color: white;
     box-shadow: 0px 0px 20px 2px #FF0080;
     border-radius: 3px;
+    margin-bottom: 20px;
 }
 
-#password {
+#five {
+    margin-top: 10px;
+}
+
+.password {
     background-color: transparent;
     border-radius: 3px 0px 0px 3px;
     width: 100%;
+    height: 35px;
     border: none;
     height: 27px;
     outline: none;
@@ -66,35 +90,44 @@ body {
     font-size: medium;
 }
 
-#trigger {
+.trigger {
     text-align: center;
     background-color: transparent;
     color: black;
     outline: none;
     border: 2px solid white;
     width: 40px;
-    height: 31px;
+    height: 30px;
     border-radius: 0px 4px 4px 0px;
     font-size: 15px;
     font-weight: bold;
 }
 
-#trigger:hover {
+.trigger:hover {
     cursor: pointer;
     font-size: 17px;
     text-shadow: 0px 6px 4px black;
 }
 
+#four {
+    margin-top: 13px;
+    visibility: hidden;
+}
+
+
 #enterbtn {
+    height: 40px;
     text-align: center;
+    display: inline-block;
+    margin: 50px 0% 1% 38%;
 }
 
 #enter {
     outline: none;
     border: 2px solid white;
     border-radius: 5px;
+    width: 100px;
     height: 40px;
-    width: 70px;
     text-align: center;
     font-family: sans-serif;
     font-weight: 780;
@@ -111,9 +144,15 @@ body {
     color: white;
     font-family: sans-serif;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 #question a {
-    color: rgb(73, 73, 243);
+    font-weight: bold;
+    color: rgb(77, 117, 226);
+    cursor: pointer;
+}
+
+#question a:hover {
+    text-decoration: underline;
 }
