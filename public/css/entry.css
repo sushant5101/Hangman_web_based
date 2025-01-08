@@ -49,11 +49,10 @@ body {
     padding-left: 4px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: medium;
-    box-shadow: 0px 0px 20px 2px #FF0080;
 }
 
 #info {
-    color: rgb(214, 212, 212);
+    color: rgb(163, 163, 163);
     margin-top: 4px;
     font-weight: lighter;
 }
@@ -68,13 +67,8 @@ body {
     width: 300px;
     display: flex;
     background-color: white;
-    box-shadow: 0px 0px 20px 2px #FF0080;
     border-radius: 3px;
     margin-bottom: 20px;
-}
-
-#five {
-    margin-top: 10px;
 }
 
 .password {
@@ -115,6 +109,13 @@ body {
 }
 
 
+#confirmpassinfo{
+    visibility:hidden;
+    color: rgb(170, 168, 168);
+    position: fixed;
+    bottom: 38%;
+}
+
 #enterbtn {
     height: 40px;
     text-align: center;
@@ -147,12 +148,19 @@ body {
     margin-top: 50px;
 }
 
-#question a {
+#click{
+    position: fixed;
+    left: 56.9%;
+    bottom: 12.5%;
+}
+
+#clickme {
     font-weight: bold;
+    font-family: sans-serif;
     color: rgb(77, 117, 226);
     cursor: pointer;
 }
 
-#question a:hover {
+#clickme:hover {
     text-decoration: underline;
 }

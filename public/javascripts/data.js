@@ -4,6 +4,7 @@ const trigger = document.getElementById("trigger");
 const enter = document.getElementById("enter");
 const username = document.getElementById("username");
 const clickme = document.getElementById("clickme");
+const footquestion = document.getElementById("question");
 const usernamelabel = document.getElementById("userlabel");
 const passwordlabel = document.getElementById("passwordlabel");
 let userExists = false;
@@ -11,6 +12,9 @@ const headquestion = document.getElementById("headquestion");
 const confirmpass = document.getElementById("confirmpassword");
 const confirmpassbox = document.getElementById("five");
 const userfeedback = document.getElementById("info");
+const confirmpassinfo = document.getElementById("confirmpassinfo");
+const cookievalue = getCookie("username");
+
 
 function visibility(input, action) {
     if (input.type === "password") {
@@ -40,22 +44,77 @@ async function getuser() {
     }
 }
 
+enter.addEventListener("click", () => {
+    if (usernamelabel.innerText === "Enter your username") {
+        checkuser();
+    } else {
+        registeruser();
+    }
+})
+
 async function checkuser() {
     const userData = await getuser(); // Access the data here
     if (userData.hangman_user) {
         userData.hangman_user.forEach(user => {
             if (user.name === username.value && username.value !== "" && password.value !== "") {
                 userExists = true;
-                userfeedback.innerText = `${username.value} already exist pick other`
+            }
+        })
+    };
+    if (!userExists || userData.pass !== password.value) {
+        userfeedback.innerText = `You have entred user name or password wrong `
+    } else {
+        setCookie('username', username.value, 7);
+        window.location.href = "https://puzzleman-3ce04.web.app/";
+    }
+    userExists = false;
+}
+
+async function registeruser() {
+    const userData = await getuser(); // Access the data here
+    if (userData.hangman_user && usernamelabel.innerText == "Register your username") {
+        userData.hangman_user.forEach(user => {
+            if (user.name === username.value && username.value !== "" && password.value !== "") {
+                userExists = true;
+                userfeedback.innerText = `username ${username.value} already exist pick another`
             }
         });
-        if (!userExists && username.value !== "" && password.value !== "") {
-            addUser(username.value, password.value);
-        } else {
-            console.log("failed");
-            alert("Process failed : the details you gave was incorrect or the user name has already been picked by someone");
+        if (!userExists && username.value !== "" && password.value !== "" && password.value === confirmpass.value) {
+            confirmpassinfo.style.visibility = "hidden";
+            userfeedback.style.visibility = "hidden";
+            await addUser(username.value, password.value);
+            setCookie('username', username.value, 7);
+            window.location.href = "https://puzzleman-3ce04.web.app/";
+        } else if (password.value !== confirmpass.value) {
+            confirmpassinfo.style.visibility = "visible";
+
         }
     }
+}
+
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    console.log("updated");
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i].trim();
+        if (cookie.indexOf(nameEQ) === 0) return cookie.substring(nameEQ.length, cookie.length);
+    }
+    return null;
+}
+
+if (cookievalue) {
+    console.log("hi");
+    window.location.href = "https://puzzleman-3ce04.web.app/";
+} else {
+
 }
 
 
@@ -83,14 +142,20 @@ async function addUser(name, pass) {
 clickme.addEventListener("click", () => {
     if (usernamelabel.innerText === "Enter your username") {
         usernamelabel.innerText = "Register your username";
-        username.style.boxShadow = "0px 0px 20px 2px rgb(113, 243, 87)";
         headquestion.style.visibility = "visible";
         confirmpassbox.style.visibility = "visible";
+        footquestion.innerText = "Already have an account ?";
+        username.value = "";
+        password.value = "";
+        confirmpass.value = "";
     }
     else {
         usernamelabel.innerText = "Enter your username";
-        username.style.boxShadow = "0px 0px 20px 2px #FF0080";
         headquestion.style.visibility = "hidden";
         confirmpassbox.style.visibility = "hidden";
+        footquestion.innerText = "Don't have an account ? ";
+        username.value = "";
+        password.value = "";
+        confirmpass.value = "";
     }
 })

@@ -8,21 +8,21 @@ const details = document.getElementById("details");
 const settings = document.getElementById("settings");
 
 //====================fetching information from the server
-async function checkuser() {
-    try {
-        const response = await fetch('https://hangman-fuil.onrender.com/get-bin');
-        data = await response.json();
-    } catch (error) {
-        console.log("There was an error" + error);
-    }
-}
+// async function checkuser() {
+//     try {
+//         const response = await fetch('https://hangman-fuil.onrender.com/get-bin');
+//         data = await response.json();
+//     } catch (error) {
+//         console.log("There was an error" + error);
+//     }
+// }
 
-(async () => {
-    await checkuser(); // Wait for the data
-    if (data) {
-        profilep.innerHTML = data.hangman_user[4].name;
-    }
-})();
+// (async () => {
+//     await checkuser(); // Wait for the data
+//     if (data) {
+//         profilep.innerHTML = data.hangman_user[4].name;
+//     }
+// })();
 
 console.log("Hello! world");
 const cRadiobutton = document.querySelectorAll('input[name=level]');
@@ -185,6 +185,7 @@ function WORD_CHECKER(word_length, word) {
     for (var i = 0; i < word_length; i++) {
 
         if (used_letters.includes(user_input.value)) {
+            user_input.focus = false;
             console.log("allready entred " + user_input.value + " try another");
             text.innerText = `You have already entred the letter " ${user_input.value} ".`;
             popupbox.style.display = "block";
