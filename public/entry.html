@@ -12,10 +12,10 @@
 <body>
 
     <div id="main">
-        <h3 id="headquestion">It looks like you are new want to register ?</h3>
+        <!-- <h3 id="headquestion">It looks like you are new want to register ?</h3> -->
         <div id="one">
             <label id="userlabel" class="inputlabel" for="username">Enter your username</label><br><br>
-            <input id="username" maxlength="20" placeholder="Eg. jhon" autocomplete="off" focus type="text" required>
+            <input id="username" maxlength="20" placeholder="Eg. john" autocomplete="off" focus type="text" required>
             <p id="info"></p>
         </div>
         <div id="two">
@@ -31,14 +31,13 @@
                         name="confirmpass" id="confirmpassword" autocomplete="off">
                     <button name="trigger" onclick="visibility(confirmpass, confirmtrigger)" id="confirmtrigger"
                         class="trigger">O</button>
-                </div>
+                </div> 
             </div>
             <p id="confirmpassinfo">Password didnot match</p>
         </div>
         <span id="enterbtn"><button id="enter">Enter</button></span>
-        <p id="question">Don't have an account ? </p><span id="click"><a id="clickme">Click Me</a>.</span>
+    <span id="click"><p id="question">Don't have an account ? </p><a id="clickme">Click Me</a>.</span>
     </div>
-
     <script src="javascripts/data.js" defer></script>
 
 </body>

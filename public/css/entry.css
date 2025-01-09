@@ -1,33 +1,38 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
+html,
 body {
-    background: linear-gradient(to right, #4c0769, #3b016e, #9c1d01, #c23c03);
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
     overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 #main {
-    border: 2px solid #787388;
     border-radius: 99px 4px;
     height: 500px;
     width: 500px;
-    gap: 50px;
-    margin: 5% 20% 2% 31.5%;
-    background: #171744;
+    margin: 5% 30%;
+    background: transparent;
+    background: linear-gradient(to right, #e0c3fc, #8ec5fc);
     box-shadow: 0px 0px 25px 6px #535C91;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
-#headquestion {
+
+/* #headquestion {
     text-align: center;
     visibility: hidden;
     color: rgb(179, 175, 175);
     font-family: sans-serif;
     font-weight: bolder;
+    font-size: medium;
     margin-top: 9px;
-}
+} */
 
 #one {
     margin: 5% 17% 5% 17%;
@@ -35,7 +40,7 @@ body {
 }
 
 .inputlabel {
-    color: rgb(155, 154, 154);
+    color: #2B2B2B;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -109,11 +114,9 @@ body {
 }
 
 
-#confirmpassinfo{
-    visibility:hidden;
+#confirmpassinfo {
+    visibility: hidden;
     color: rgb(170, 168, 168);
-    position: fixed;
-    bottom: 38%;
 }
 
 #enterbtn {
@@ -125,33 +128,38 @@ body {
 
 #enter {
     outline: none;
-    border: 2px solid white;
+    border: none;
     border-radius: 5px;
     width: 100px;
     height: 40px;
     text-align: center;
     font-family: sans-serif;
     font-weight: 780;
+    background: linear-gradient(to right, #4c0769, #3b016e);
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 #enter:hover {
     cursor: pointer;
-    background-color: rgb(185, 184, 184);
-    border: 2px solid rgb(185, 184, 184);
+    background: linear-gradient(to right, #3b016e, #4c0769);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#click {
+    display: flex;
+    gap: 1%;
+    align-items: center;
+    margin-top: 5%;
+    padding-left: 20%;
 
 }
 
 #question {
-    color: white;
+    color: #3B3B3B;
     font-family: sans-serif;
     text-align: center;
-    margin-top: 50px;
-}
-
-#click{
-    position: fixed;
-    left: 56.9%;
-    bottom: 12.5%;
 }
 
 #clickme {
@@ -163,4 +171,14 @@ body {
 
 #clickme:hover {
     text-decoration: underline;
+    color: rgb(50, 90, 180);
+}
+
+/* adding responsiveness  */
+
+@media (max-width: 600px) {
+    body {
+        color: blue;
+        background: #fff;
+    }
 }

@@ -1,28 +1,19 @@
 
-
-//================================================================
-
+const username = localStorage.getItem("username");
 let data = null;
 const profilep = document.getElementById("p");
 const details = document.getElementById("details");
 const settings = document.getElementById("settings");
+//================================================================
+if (username) {
+    profilep.innerText = username;
+    console.log(username);
+}else{
+    // console.log("located to login page");
+    window.location.href = "https://puzzleman-3ce04.web.app/entry.html";
+}
 
-//====================fetching information from the server
-// async function checkuser() {
-//     try {
-//         const response = await fetch('https://hangman-fuil.onrender.com/get-bin');
-//         data = await response.json();
-//     } catch (error) {
-//         console.log("There was an error" + error);
-//     }
-// }
 
-// (async () => {
-//     await checkuser(); // Wait for the data
-//     if (data) {
-//         profilep.innerHTML = data.hangman_user[4].name;
-//     }
-// })();
 
 console.log("Hello! world");
 const cRadiobutton = document.querySelectorAll('input[name=level]');
