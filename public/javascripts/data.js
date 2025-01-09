@@ -79,6 +79,7 @@ async function registeruser() {
             if (user.name === username.value && username.value !== "" && password.value !== "") {
                 userExists = true;
                 userfeedback.innerText = `username ${username.value} already exist pick another`
+                userfeedback.style.visibility = "visible";
             }
         });
         if (!userExists && username.value !== "" && password.value !== "" && password.value === confirmpass.value) {
