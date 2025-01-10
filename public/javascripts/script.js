@@ -4,11 +4,13 @@ let data = null;
 const profilep = document.getElementById("p");
 const details = document.getElementById("details");
 const settings = document.getElementById("settings");
+const profile = document.getElementById("profile");
+const body = document.getElementsByTagName("body");
 //================================================================
 if (username) {
     profilep.innerText = username;
     console.log(username);
-}else{
+} else {
     // console.log("located to login page");
     window.location.href = "https://puzzleman-3ce04.web.app/entry.html";
 }
@@ -57,20 +59,63 @@ cRadiobutton.forEach(radio => {
 //     console.log(nav_div.offsetWidth); 
 //     element.style.animation = 'open 3s ease-in-out  reverse ';
 // }
+const navigationcontent = document.createElement("div");
+navigationcontent.style.width = "90%";
+navigationcontent.style.height = "90%"
+navigationcontent.style.margin = "1.9% 5.6% 0% 4.6%"
+navigationcontent.style.border = "2px solid #b0b0ac";
+navigationcontent.style.borderRadius = "4px";
+navigationcontent.style.backgroundColor = "#2C3E50";
+navigationcontent.style.fontFamily = "sans-serif";
+navigationcontent.style.padding = "10px";
+navigationcontent.style.overflowX = "hidden";
+navigationcontent.style.overflowY = "auto";
+popupwindow.style.background = "#7f8078";
+navigationcontent.style.color = "#FFFFFF"
 
 
-//=================== function to controll all the levels according to the user input============
+
+function navigation(nav) {
+    document.body.style.overflow = 'hidden';
+    switch (nav) {
+        case 'profile':
+            {
+                console.log(nav);
+                break;
+            } case 'details':
+            {
+                console.log(nav);
+                break;
+            } case 'settings':
+            {
+                console.log(nav);
+                break;
+            }
+        default: {
+            console.log("hi");
+        }
+    }
+    navigationcontent.innerText = nav;
+
+    popupwindow.appendChild(navigationcontent);
+    popupbox.style.display = "block";
+}
 
 popupclose.addEventListener("click", () => {
     popupbox.style.display = "none";
+    document.body.style.overflow = 'auto';
+    popupwindow.removeChild(navigationcontent);
 });
 
 window.addEventListener('click', function (event) {
     if (event.target === popupbox) {
+        document.body.style.overflow = 'auto';
+        popupwindow.removeChild(navigationcontent);
         popupbox.style.display = 'none';
     }
 });
 
+//=================== function to controll all the levels according to the user input============
 
 function GAME_MANAGER(level) {
 
