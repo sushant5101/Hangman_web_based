@@ -3,36 +3,28 @@
     padding: 0;
 }
 
+
 html,
 body {
+    transition: all .5s ease-in-out;
     background: linear-gradient(to right, #fbc2eb, #a6c1ee);
     overflow: hidden;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
     margin: 0;
     padding: 0;
 }
 
 #main {
+    transition: all 3s ease-in-out;
     border-radius: 99px 4px;
     height: 500px;
     width: 500px;
-    margin: 5% 30%;
-    background: transparent;
+    margin: 9vh auto;
     background: linear-gradient(to right, #e0c3fc, #8ec5fc);
     box-shadow: 0px 0px 25px 6px #535C91;
     overflow: hidden;
 }
-
-
-/* #headquestion {
-    text-align: center;
-    visibility: hidden;
-    color: rgb(179, 175, 175);
-    font-family: sans-serif;
-    font-weight: bolder;
-    font-size: medium;
-    margin-top: 9px;
-} */
 
 #one {
     margin: 5% 17% 5% 17%;
@@ -63,7 +55,7 @@ body {
 }
 
 #two {
-    margin: 10% 17% 10% 17%;
+    margin: 10% 17%;
     height: 15%;
 }
 
@@ -79,7 +71,7 @@ body {
 .password {
     background-color: transparent;
     border-radius: 3px 0px 0px 3px;
-    width: 100%;
+    width: 90%;
     height: 35px;
     border: none;
     height: 27px;
@@ -95,7 +87,7 @@ body {
     color: black;
     outline: none;
     border: 2px solid white;
-    width: 40px;
+    width: 10%;
     height: 30px;
     border-radius: 0px 4px 4px 0px;
     font-size: 15px;
@@ -120,10 +112,12 @@ body {
 }
 
 #enterbtn {
+    position: relative;
     height: 40px;
     text-align: center;
-    display: inline-block;
-    margin: 50px 0% 1% 38%;
+    top: 5%;
+    left: 35%;
+    justify-self: center;
 }
 
 #enter {
@@ -167,6 +161,7 @@ body {
     font-family: sans-serif;
     cursor: pointer;
     color: blue;
+    text-align: center;
 }
 
 #clickme:hover {
@@ -187,9 +182,44 @@ body {
 
 /* adding responsiveness  */
 
-@media (max-width: 600px) {
+@media (max-width: 780px) {
     body {
-        color: blue;
-        background: #fff;
+        background: linear-gradient(to right, #e0c3fc, #8ec5fc);
     }
+
+    #main {
+        border: none;
+        border-radius: 0;
+        display: flexbox;
+        width: 100vw;
+        padding: 5%;
+        margin: 20% auto;
+        justify-content: center;
+    }
+
+    #main #username {
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        width: 70%;
+    }
+
+
+    #main #one,
+    #two,
+    #three,
+    #four {
+        width: 70%;
+    }
+
+    #five {
+        width: 100%;
+    }
+
+    #forgotpass {
+        margin-right: 20%;
+    }
+
+
+
 }
