@@ -16,13 +16,21 @@
 </head>
 
 <body>
+    <div id="navigation">
+        <div id="navigationcontent">
+            <p>Hello</p>
+        </div>
+    </div>
+
     <nav id="nav">
         <a href="tictactoe.html"> <img id="logo" src="img/logo.ico" title="Hello" alt="img"></a>
         <div id="Details">
             <ul>
-                <li onclick="navigation('profile')" id="profile">Profile:<p id="p"> </p><img src="img/homeicon.png" alt=""></li>
-                <li onclick="navigation('details')" id="details">Details <img src="img/postsicon.png" alt=""></li>
-                <li onclick="navigation('settings')" id="Settings">Settings <img src="img/settingicon.png" alt=""></li>
+                <li onclick="navigation('profile')" id="profile"><img src="img/homeicon.png" alt=""> Profile:<p id="p">
+                    </p>
+                </li>
+                <li onclick="navigation('details')" id="details"><img src="img/postsicon.png" alt=""> Details</li>
+                <li onclick="navigation('settings')" id="Settings"><img src="img/settingicon.png" alt=""> Settings</li>
             </ul>
         </div>
     </nav>
@@ -69,12 +77,8 @@
                 <ul id="used_letter_list">
                 </ul>
             </div>
-            <div id="box">
-                <!-- <pre>O
-/|\
-/ \
-            </pre> -->
-            </div>
+            <!-- <div id="box">
+            </div> -->
         </div>
         <div id="popupbox">
             <div id="popupwindow"><span id="popupclose">&times;</span>

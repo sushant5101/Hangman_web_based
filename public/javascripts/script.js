@@ -11,8 +11,7 @@ if (username) {
     profilep.innerText = username;
     console.log(username);
 } else {
-    // console.log("located to login page");
-    window.location.href = "https://puzzleman-3ce04.web.app/entry.html";
+    // window.location.href = "https://puzzleman-3ce04.web.app/entry.html";
 }
 
 
@@ -41,6 +40,8 @@ const popupbox = document.getElementById("popupbox");
 const popupwindow = document.getElementById("popupwindow");
 const text = document.getElementById("text");
 const popupclose = document.getElementById("popupclose");
+const navigationpopup = document.getElementById("navigation")
+let navshown = false
 //============================accessing all the radio buttons======================
 
 cRadiobutton.forEach(radio => {
@@ -52,53 +53,38 @@ cRadiobutton.forEach(radio => {
     });
 });
 
-//==============================================adding a block of code to play animation when mouse leaves======
-
-
-// function animationplay(element) {
-//     console.log(nav_div.offsetWidth); 
-//     element.style.animation = 'open 3s ease-in-out  reverse ';
-// }
-const navigationcontent = document.createElement("div");
-navigationcontent.style.width = "90%";
-navigationcontent.style.height = "90%"
-navigationcontent.style.margin = "1.9% 5.6% 0% 4.6%"
-navigationcontent.style.border = "2px solid #b0b0ac";
-navigationcontent.style.borderRadius = "4px";
-navigationcontent.style.backgroundColor = "#2C3E50";
-navigationcontent.style.fontFamily = "sans-serif";
-navigationcontent.style.padding = "10px";
-navigationcontent.style.overflowX = "hidden";
-navigationcontent.style.overflowY = "auto";
-popupwindow.style.background = "#7f8078";
-navigationcontent.style.color = "#FFFFFF"
-
-
+//========function to controll animation of different navigation action
 
 function navigation(nav) {
-    document.body.style.overflow = 'hidden';
     switch (nav) {
         case 'profile':
             {
-                console.log(nav);
                 break;
             } case 'details':
             {
-                console.log(nav);
                 break;
             } case 'settings':
             {
-                console.log(nav);
                 break;
             }
         default: {
-            console.log("hi");
+            console.log("Some thing might have gone wrong!!");
         }
     }
-    navigationcontent.innerText = nav;
+    navigationpopup.addEventListener("animationend", (event) => {
+        if (event.animationName == "entry") {
+            navshown = true
+        } else if (event.animationName == "leave") {
+            navshown = false
+        }
+    })
 
-    popupwindow.appendChild(navigationcontent);
-    popupbox.style.display = "block";
+    if (navshown) {
+        navigationpopup.style.animation = "leave .4s linear"
+    }
+    else if (!navshown) {
+        navigationpopup.style.animation = "entry .3s linear forwards"
+    }
 }
 
 popupclose.addEventListener("click", () => {

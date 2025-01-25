@@ -10,18 +10,22 @@
 
 body {
     height: 100%;
-    background-color: #242d47;
+    background-color: #0a3f77;
     overflow-x: hidden;
 }
 
 #nav {
-    height: 185px;
-    width: 200px;
-    margin: 1%;
-    top: 0;
+    height: 90vh;
+    top: 3vh;
     left: 0;
     position: fixed;
     text-align: center;
+    background-color: #041d77;
+    max-width: 13%;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    box-shadow: 6px -6px 30px 3px black;
 }
 
 #logo {
@@ -32,15 +36,10 @@ body {
 }
 
 #Details {
-    box-shadow: -6px 0px 20px rgb(59, 59, 59) inset;
     display: flex;
     text-align: left;
-    width: 34%;
     overflow: hidden;
-    background-color: #FFD65A;
-    border-radius: 3px;
     margin-top: 5px;
-    padding: 9px;
 }
 
 
@@ -70,23 +69,22 @@ body {
 }
 
 #Details li img {
-    padding: 2px;
     border: 1px solid black;
     border-radius: 50%;
 }
 
 #Details li:hover {
-    background-color: #acd6d1;
+    background-color: #0c35c9;
     transition: .3s ease-in-out;
     cursor: pointer;
 }
 
 #body1 {
     margin: 5% 20% 0% 20%;
-    border: 2px solid rgb(58, 47, 47);
+    border: 2px solid #010f42;
     border-radius: 10px;
     box-shadow: 10px 10px 15px #0d111d;
-    background-color: #FFD65A;
+    background-color: #c4ac4e;
     padding: 1%;
 }
 
@@ -203,12 +201,6 @@ body {
     white-space: pre;
 }
 
-/* #box pre {
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-shadow: 9px 19px 3px #000000;
-} */
-
 #popupbox {
     display: none;
     position: fixed;
@@ -242,12 +234,67 @@ body {
     overflow: hidden;
 }
 
+#navigation {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+@keyframes entry {
+    0% {
+        opacity: 0;
+        top: 50%;
+        width: 10vw;
+        height: 10vh;
+        right: 100%;
+    }
+
+    100% {
+        opacity: 1;
+        top: 4.5%;
+        width: 87vw;
+        height: 90vh;
+        right: 0%;
+    }
+}
+
+@keyframes leave {
+
+    0% {
+        opacity: 1;
+        top: 4.5%;
+        width: 87vw;
+        height: 90vh;
+        right: 0%;
+    }
+
+    100% {
+        opacity: 0;
+        top: 50%;
+        width: 10vw;
+        height: 10vh;
+        right: 100%;
+    }
+}
+
+#navigationcontent {
+    background-color: rgb(31, 26, 26);
+    color: white;
+    height: 100%;
+    border-radius: 5px;
+    text-align: center;
+    border: 2px solid gray;
+    box-shadow: 0px 0px 9px gray;
+}
+
 #foot {
     margin: 5% 20% 0% 20%;
     border: 2px double rgb(58, 47, 47);
     border-radius: 10px 10px 0px 0px;
     box-shadow: 10px 10px 15px #0d111d;
-    background-color: #FFD65A;
+    background-color: #c4ac4e;
     padding: 1px 2px 3px 2px;
 }
 
