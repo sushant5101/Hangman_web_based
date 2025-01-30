@@ -11,7 +11,7 @@ if (username) {
     profilep.innerText = username;
     console.log(username);
 } else {
-    // window.location.href = "https://puzzleman-3ce04.web.app/entry.html";
+     window.location.href = "https://puzzleman-3ce04.web.app/entry.html";
 }
 
 
