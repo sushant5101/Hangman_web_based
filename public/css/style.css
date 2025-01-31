@@ -10,7 +10,7 @@
 
 body {
     height: 100%;
-    background-color: #0a3f77;
+    background-color: #025da1;
     overflow-x: hidden;
 }
 
@@ -20,7 +20,7 @@ body {
     left: 0;
     position: fixed;
     text-align: center;
-    background-color: #041d77;
+    background-color: #1d524c;
     max-width: 13%;
     border-radius: 5px;
     color: white;
@@ -39,7 +39,7 @@ body {
     display: flex;
     text-align: left;
     overflow: hidden;
-    margin-top: 5px;
+    padding: 3px;
 }
 
 
@@ -59,9 +59,9 @@ body {
     gap: 9px;
     border: 5px solid rgb(62, 181, 211);
     border-style: none none none solid;
-    border-radius: 0px 5px;
+    border-radius: 5px;
     width: 100%;
-    padding: 4px;
+    padding: 4px 0 4px 4px ;
     margin: 0px 0px 4px 0px;
     list-style-type: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -74,7 +74,7 @@ body {
 }
 
 #Details li:hover {
-    background-color: #0c35c9;
+    background-color: #0063B1;
     transition: .3s ease-in-out;
     cursor: pointer;
 }
@@ -84,7 +84,7 @@ body {
     border: 2px solid #010f42;
     border-radius: 10px;
     box-shadow: 10px 10px 15px #0d111d;
-    background-color: #c4ac4e;
+    background-color: #b3b0b0c4;
     padding: 1%;
 }
 
@@ -119,7 +119,7 @@ body {
     width: 2.7%;
     border: 1px solid black;
     border-radius: 4px;
-    background-color: #c4af65;
+    background-color: #b3b0b0c4;
     padding: 2px;
     outline: none;
     font-size: large;
@@ -147,7 +147,6 @@ body {
 }
 
 #box_main {
-    /* border: 2px solid white; */
     display: flex;
     width: 100%;
     gap: 5%;
@@ -174,7 +173,7 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
-    overflow: auto;
+    overflow-x: auto;
     list-style-type: none;
     font-size: 20px;
     height: 100px;
@@ -186,11 +185,10 @@ body {
     margin-left: 4px;
     padding: 0px 5px;
     border-radius: 4px;
-    background-color: #afa16f;
+    background-color: #b3b0b0c4;
 }
 
 #box {
-    /* border: 2px solid black; */
     height: 100px;
     width: 150px;
     background-color: rgb(196, 193, 193);
@@ -294,7 +292,7 @@ body {
     border: 2px double rgb(58, 47, 47);
     border-radius: 10px 10px 0px 0px;
     box-shadow: 10px 10px 15px #0d111d;
-    background-color: #c4ac4e;
+    background-color: #b3b0b0c4;
     padding: 1px 2px 3px 2px;
 }
 
@@ -326,7 +324,7 @@ body {
     font-family: sans-serif;
     margin: 5px 0px 5px 18px;
     font-size: small;
-    color: gray;
+    color: rgb(63, 36, 36);
 }
 
 .title {

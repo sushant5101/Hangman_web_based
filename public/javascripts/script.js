@@ -11,7 +11,7 @@ if (username) {
     profilep.innerText = username;
     console.log(username);
 } else {
-    // window.location.href = "https://puzzleman-3ce04.web.app/entry.html";
+    window.location.href = "https://puzzleman-3ce04.web.app/entry.html";
 }
 
 
@@ -68,7 +68,7 @@ function navigation(nav) {
                 break;
             }
         default: {
-            console.log("Some thing might have gone wrong!!");
+            console.log("Something might have gone wrong!!");
         }
     }
     navigationpopup.addEventListener("animationend", (event) => {
